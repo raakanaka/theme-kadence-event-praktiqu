@@ -31,7 +31,7 @@ do_action( 'tutor/template/login/before/wrap' );
 
 		<div class="tutor-login-form-wrapper">
 			<div class="tutor-fs-5 tutor-color-black tutor-mb-32">
-				<?php esc_html_e( 'Hi, Welcome back!', 'tutor' ); ?>
+				<?php esc_html_e( 'Hi, Selamat Datang Kembali!', 'tutor' ); ?>
 			</div>
 			<?php
 				// load form template.

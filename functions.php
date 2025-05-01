@@ -30,6 +30,17 @@ require get_template_directory() . '/inc/functions.php';
 // Initialize the theme.
 call_user_func( 'Kadence\kadence' );
 
+add_action('user_register', 'save_user_level_meta', 10, 1);
+function save_user_level_meta($user_id) {
+    if (isset($_POST['user_level'])) {
+        $level = sanitize_text_field($_POST['user_level']);
+        update_user_meta($user_id, 'user_level', $level);
+        
+        // Debugging: Tampilkan nilai yang disimpan
+        error_log('User Level for User ID ' . $user_id . ': ' . $level);
+    }
+}
+
 // Buat role jika belum ada
 add_action('init', function() {
     if (!get_role('umum')) {

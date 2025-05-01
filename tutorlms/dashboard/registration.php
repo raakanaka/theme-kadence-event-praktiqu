@@ -80,12 +80,44 @@
 				<div class="tutor-form-col-6">
 					<div class="tutor-form-group">
 						<label>
-							<?php esc_html_e( 'User Name', 'tutor' ); ?>
+							<?php esc_html_e( 'Username', 'tutor' ); ?>
 						</label>
 
 						<input type="text" name="user_login" class="tutor_user_name" value="<?php echo esc_attr( tutor_utils()->input_old( 'user_login' ) ); ?>" placeholder="<?php esc_html_e( 'User Name', 'tutor' ); ?>" required autocomplete="username">
 					</div>
 				</div>
+				
+							<!-- Field Select untuk Roles -->
+			
+		<div class="tutor-form-row">
+            <div class="tutor-form-col-12">
+                <div class="tutor-form-group">
+                    <label><?php _e('Profesi Course', 'tutor'); ?> <span class="required">*</span></label>
+                    <select name="profesi_course" class="tutor-form-control" required>
+                        <option value=""><?php _e('Pilih Profesi Course', 'tutor'); ?></option>
+                        <option value="umum" <?php selected(tutor_utils()->input_old('profesi_course'), 'umum'); ?>>Umum</option>
+                        <option value="professional" <?php selected(tutor_utils()->input_old('profesi_course'), 'professional'); ?>>Professional</option>
+                  </select>
+                </div>
+            </div>
+        </div>
+
+
+			<!-- Field Select untuk Level -->
+			<div class="tutor-form-row">
+				<div class="tutor-form-col-12">
+					<div class="tutor-form-group">
+						<label for="user_level">
+							<?php esc_html_e( 'Konfirmasi Profesi Course', 'tutor' ); ?><span class="required">*</span>
+						</label>
+						<select name="user_level" id="user_level" class="tutor-form-control" required>
+							<option value=""><?php esc_html_e( 'Konfirmasi Profesi Course', 'tutor' ); ?></option>
+							<option value="umum"><?php esc_html_e( 'Umum (Beginner)', 'tutor' ); ?></option>
+							<option value="professional"><?php esc_html_e( 'Professional (Intermediate/Expert)', 'tutor' ); ?></option>
+						</select>
+					</div>
+				</div>
+			</div>
 
 				<div class="tutor-form-col-6">
 					<div class="tutor-form-group">
@@ -137,8 +169,7 @@
 					</div>
 				</div>
 			</div>
-
-
+			
 			<div class="tutor-form-row">
 				<div class="tutor-form-col-12">
 					<div class="tutor-form-group">
