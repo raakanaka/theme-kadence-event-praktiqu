@@ -30,6 +30,15 @@ require get_template_directory() . '/inc/functions.php';
 // Initialize the theme.
 call_user_func( 'Kadence\kadence' );
 
+add_filter('tutor_course_level', 'modify_course_level');
+        if ( ! function_exists('modify_course_level')){
+        function modify_course_level($levels){
+        $levels['beginner'] = "Umum";
+        $levels['expert'] = "Professional";
+        return $levels;
+    }
+}
+
 add_action('user_register', 'save_user_level_meta', 10, 1);
 function save_user_level_meta($user_id) {
     if (isset($_POST['user_level'])) {

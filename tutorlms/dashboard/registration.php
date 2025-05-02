@@ -87,7 +87,7 @@
 					</div>
 				</div>
 				
-							<!-- Field Select untuk Roles -->
+														<!-- Field Select untuk Roles -->
 			
 		<div class="tutor-form-row">
             <div class="tutor-form-col-12">
@@ -113,12 +113,11 @@
 						<select name="user_level" id="user_level" class="tutor-form-control" required>
 							<option value=""><?php esc_html_e( 'Konfirmasi Profesi Course', 'tutor' ); ?></option>
 							<option value="umum"><?php esc_html_e( 'Umum (Beginner)', 'tutor' ); ?></option>
-							<option value="professional"><?php esc_html_e( 'Professional (Intermediate/Expert)', 'tutor' ); ?></option>
+							<option value="expert"><?php esc_html_e( 'Professional (Intermediate/Expert)', 'tutor' ); ?></option>
 						</select>
 					</div>
 				</div>
 			</div>
-
 				<div class="tutor-form-col-6">
 					<div class="tutor-form-group">
 						<label>
