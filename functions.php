@@ -113,3 +113,43 @@ function upload_verification_pdf_handler() {
         wp_send_json_error( 'Upload gagal.' );
     }
 }
+
+function custom_translate_tutor_lms_texts( $translated_text, $text, $domain ) {
+    if ( 'tutor' === $domain ) {
+        switch ( $text ) {
+            case 'Tags':
+                $translated_text = 'Roles';
+                break;
+            case 'Add tags':
+                $translated_text = 'Add roles';
+                break;
+        }
+    }
+    return $translated_text;
+}
+add_filter( 'gettext', 'custom_translate_tutor_lms_texts', 20, 3 );
+
+
+
+add_filter('tutor_course_level', 'modify_course_level');
+        if ( ! function_exists('modify_course_level')){
+        function modify_course_level($levels){
+		unset($levels['intermediate']);
+        $levels['beginner'] = "Umum";
+        $levels['expert'] = "Professional";
+        return $levels;
+    }
+}
+
+function potong_judul_heading($atts) {
+    $atts = shortcode_atts([
+        'words' => 6,
+        'id' => get_the_ID()
+    ], $atts);
+
+    $title = get_the_title($atts['id']);
+    $words = explode(' ', $title);
+    $cut = array_slice($words, 0, $atts['words']);
+    return implode(' ', $cut) . '.';
+}
+add_shortcode('judul_potong', 'potong_judul_heading');
