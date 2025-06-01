@@ -30,6 +30,10 @@
 	<div id="tutor-registration-wrap">
 
 		<?php do_action( 'tutor_before_student_reg_form' ); ?>
+	<br/>
+		<br/>
+		<br/>
+		<br/>
 
 		<form method="post" enctype="multipart/form-data" id="tutor-registration-form">
 			<input type="hidden" name="tutor_course_enroll_attempt" value="<?php echo isset( $_GET['enrol_course_id'] ) ? (int) $_GET['enrol_course_id'] : ''; ?>">
@@ -199,7 +203,10 @@
 			
 		</form>
 		<?php do_action( 'tutor_after_registration_form_wrap' ); ?>
-		
+		<br/>
+		<br/>
+		<br/>
+		<br/>
 	</div>
 	<?php do_action( 'tutor_after_student_reg_form' ); ?>
 <?php endif; ?>
